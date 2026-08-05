@@ -1,32 +1,8 @@
 {
     "version": 2,
     "buildCommand": "npm run build",
-    "outputDirectory": "public",
-    "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.7.3"
-        }
-    },
-    "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/build/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_KEY": "base64:7vE8vB9m+7Y8xK9Z3pL0Q1w2e3r4t5y6u7i8o9p0a1s=",
-        "DB_CONNECTION": "sqlite",
-        "DB_DATABASE": ":memory:",
-        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
-        "APP_SERVICES_CACHE": "/tmp/bootstrap/cache/services.php",
-        "APP_PACKAGES_CACHE": "/tmp/bootstrap/cache/packages.php",
-        "APP_CONFIG_CACHE": "/tmp/bootstrap/cache/config.php",
-        "APP_ROUTES_CACHE": "/tmp/bootstrap/cache/routes.php"
-    }
+    "outputDirectory": "dist",
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" }
+    ]
 }
