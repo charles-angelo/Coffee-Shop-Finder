@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+}
+
+/* Custom Scrollbar for list drawers */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #FDFBF7;
+}
+::-webkit-scrollbar-thumb {
+    background: #E5D4C0;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D9A05B;
+}
+
+/* Custom Mapping Animations & Markers */
+.user-marker-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.user-marker-core {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #D9822B;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 12px rgba(217, 130, 43, 0.7);
+    z-index: 2;
+}
+
+.user-pulse-ring {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(244, 162, 97, 0.4);
+    animation: userPulse 2s infinite ease-out;
+    z-index: 1;
+}
+
+@keyframes userPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+/* Cafe Leaflet Pins - Pastel Style */
+.cafe-marker-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cafe-marker-pin {
+    width: 34px;
+    height: 34px;
+    border-radius: 50% 50% 50% 0;
+    background: #5C3D2E;
+    border: 2px solid #F7E7CE;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 12px -2px rgba(92, 61, 46, 0.35);
+}
+
+.cafe-marker-pin svg {
+    transform: rotate(45deg);
+    width: 17px;
+    height: 17px;
+    color: #FFF8F0;
+    transition: all 0.25s ease;
+}
+
+.cafe-marker-shadow {
+    width: 12px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(92, 61, 46, 0.25);
+    position: absolute;
+    bottom: -4px;
+    left: 13px;
+    filter: blur(1.5px);
+    transition: all 0.25s ease;
+}
+
+/* Cafe Pin States */
+.cafe-marker-container.favorited .cafe-marker-pin {
+    background: #E86A92; /* soft pastel rose */
+    border-color: #FEE1E8;
+}
+
+.cafe-marker-container.selected .cafe-marker-pin {
+    background: #D9822B; /* soft caramel */
+    border-color: #FFF0D4;
+    transform: rotate(-45deg) scale(1.25);
+    box-shadow: 0 0 20px rgba(217, 130, 43, 0.5);
+    z-index: 1000 !important;
+}
+
+.cafe-marker-container.selected .cafe-marker-shadow {
+    transform: scale(1.4);
+    bottom: -7px;
+}
+
+/* Routing Dotted Line */
+.route-animate-line {
+    stroke-dasharray: 8, 8;
+    animation: routeDash 25s linear infinite;
+}
+
+@keyframes routeDash {
+    to {
+        stroke-dashoffset: -500;
+    }
+}
+
+/* Soft Pastel Leaflet Popups */
+.leaflet-popup-content-wrapper {
+    background: #FFFDF9 !important;
+    color: #3C2A21 !important;
+    border: 1px solid #EADBC8 !important;
+    border-radius: 16px !important;
+    padding: 4px !important;
+    box-shadow: 0 14px 20px -5px rgba(92, 61, 46, 0.15), 0 6px 8px -4px rgba(92, 61, 46, 0.1) !important;
+}
+
+.leaflet-popup-tip {
+    background: #FFFDF9 !important;
+    border: 1px solid #EADBC8 !important;
+}
+
+.map-popup-card {
+    padding: 8px 12px;
+    max-width: 220px;
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4A332D !important;
+    margin: 0 0 4px 0 !important;
+}
+
+.popup-distance {
+    font-size: 12px;
+    font-weight: 600;
+    color: #D9822B !important;
+    margin: 0 0 6px 0 !important;
+}
+
+.popup-address {
+    font-size: 11px;
+    color: #7F665B !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #8C7A6B !important;
+    padding: 8px 8px 0 0 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+    color: #3C2A21 !important;
+}
+
+
+
