@@ -542,10 +542,12 @@ export default function Welcome() {
         return true;
     });
 
+    useEffect(() => {
+        document.title = "RoastRoute - Pastel Coffee Shop Finder";
+    }, []);
+
     return (
         <>
-            <Head title="RoastRoute - Pastel Coffee Shop Finder" />
-
             <div className="min-h-screen bg-[#FFFBF5] text-[#3C2A21] font-sans selection:bg-[#F3C590] selection:text-[#3C2A21] overflow-x-hidden">
                 
                 {/* Floating Toast Notification (Pastel Toast) */}
