@@ -1,4 +1,3 @@
-import { Head } from '@inertiajs/react';
 import { useState, useEffect, useRef } from 'react';
 import { 
     Coffee, Navigation, Search, Heart, MapPin, 
